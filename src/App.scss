@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // already added in the HTML head
+  background-color: black;
+}
+
+html {
+  // to remove Leva GUI scrollbar
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  * {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+.app {
+  // opacity: 0;
+  // transition: opacity 500ms ease,
+}
+
+canvas {
+  // height: 100vh;
+}
+
+// // Leva
+// // overriding variable won't work in Sass, it compiles variables, while CSS includes them in the document
+// .leva-c-kWgxhW {
+//   $leva-sizes-rootWidth: 350px;
+//   $leva-fontSizes-root: 12px;
+// }
+
+.customLoader {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 10000;
+  background: black;
+  color: whitesmoke;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .loadingBarContainer {
+    background: grey;
+    width: 25%;
+
+    .loadingBar {
+      width: 100%;
+      height: 2px;
+      background: whitesmoke;
+
+      transform: scaleX(0);
+      transform-origin: center center;
+
+      // very important
+      transition: transform 750ms;
+
+      // increases performance a bit
+      will-change: transform;
+    }
+  }
+
+  .loadingBarItem {
+    margin: 0;
+    font-size: 12px;
+    color: grey;
+  }
+}
+
+// Html inside WebGL
+.HtmlContainer {
+  // font-family: 'Fira code';
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(30, 30, 30, 0.5);
+  border: 1px solid rgba(100, 100, 100, 0.25);
+  color: whitesmoke;
+
+  // cursor: help;
+
+  // to make the cursor go through the element (unclickable)
+  // pointer-events: none;
+
+  // on hover transition
+  // transform: scale(0,0);
+  // transition: transform 300ms;
+  // and add (visible) class if object is hovered with (transform: scale(1,1);)
+
+  p {
+    font-size: 12px;
+    margin: 0;
+
+    // for smoother text on transitions
+    // will-change: transform;
+  }
+}
+
+// Donuts Component
+.donutMaterials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(whitesmoke, 0.1);
+
+  pointer-events: none;
+
+  p {
+    margin: 0;
+    color: black;
+  }
+}

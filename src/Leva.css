@@ -1,0 +1,7 @@
+/* overriding variables only works in CSS, not Sass.
+   The latter compiles the variable, while CSS includes them in the document */
+/* path => node_modules/leva/src/styles/stitches.config.ts */
+.leva-c-kWgxhW {
+  --leva-sizes-rootWidth: 325px;
+  --leva-fontSizes-root: 12px;
+}
